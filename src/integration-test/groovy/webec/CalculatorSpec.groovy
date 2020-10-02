@@ -12,6 +12,7 @@ class CalculatorSpec extends GebSpec {
 
     void "Basic calculation"() {
         when:
+            // System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
             go '/static/GradeCalculator.html'
         then:
         	title == "Grade Calculator"

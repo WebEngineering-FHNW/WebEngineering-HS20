@@ -33,4 +33,16 @@ class HomeSecondSpec extends GebSpec {
         then: "Home page is displayed, again"
             title == "Homepage"
     }
+
+    void "fhnw testing"() {
+        when:"The home page is visited"
+            go 'http://www.fhnw.ch/de'
+        then:"The title is Homepage"
+        	title == "Fachhochschule Nordwestschweiz FHNW | FHNW"
+
+        when: "click on link to library"
+            $("a", text: "Bibliotheken").click()
+        then: "lib page is displayed"
+            title == "Bibliotheken | FHNW"
+    }
 }
