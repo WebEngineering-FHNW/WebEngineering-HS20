@@ -1,7 +1,7 @@
 package webec
 
 class DecorationTagLib {
-    static defaultEncodeAs = 'raw'
+    static defaultEncodeAs = [taglib: 'raw']
     static namespace = "mvc"
 
     def decorate = { attributes, body ->
