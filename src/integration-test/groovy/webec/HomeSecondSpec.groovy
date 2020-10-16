@@ -34,15 +34,19 @@ class HomeSecondSpec extends GebSpec {
             title == "Homepage"
     }
 
-    void "fhnw testing"() {
-        when:"The home page is visited"
-            go 'http://www.fhnw.ch/de'
-        then:"The title is Homepage"
-        	title == "Fachhochschule Nordwestschweiz FHNW | FHNW"
 
-        when: "click on link to library"
-            $("a", text: "Bibliotheken").click()
-        then: "lib page is displayed"
-            title == "Bibliotheken | FHNW"
-    }
+//    1) auskommentiert weil: FHNW Seite hat sich geändert, wir wollen die Änderung aber nicht testen
+//    2) kann wieder aktiviert werden wenn: Man das testen externer Seiten ausprobieren will
+//    void "fhnw testing"() {
+//        when:"The home page is visited"
+//            go 'http://www.fhnw.ch/de'
+//        then:"The title is Homepage"
+//        	title == "Fachhochschule Nordwestschweiz FHNW | FHNW"
+//
+//        when: "click on link to library"
+//            $("a", text: "Bibliotheken").click()
+//        then: "lib page is displayed"
+//            title == "Bibliotheken | FHNW"
+//    }
+
 }
