@@ -21,8 +21,11 @@
             const input = document.getElementById(valueName);
             input.value = Number(input.value) + 1 ;
         }
-
-        // todo: add a function to decrease the value
+        /** @param valueName - name and id of the input element that sets the value for the input of this name. */
+        function decrease(valueName) {
+            const input = document.getElementById(valueName);
+            input.value = Number(input.value) - 1 ;
+        }
 
     </script>
 </head>
