@@ -16,15 +16,19 @@
         }
     </style>
     <script>
-        /** @param valueName - name and id of the input element that sets the value for the input of this name. */
-        function increase(valueName) {
+        /**
+         * @param valueName - name and id of the input element that sets the value for the input of this name.
+         * @param increment - the value to add, might be 0 or negative.
+         */
+        function change(valueName, increment) {
             const input = document.getElementById(valueName);
-            input.value = Number(input.value) + 1 ;
+            input.value = Number(input.value) + increment ;
         }
-        /** @param valueName - name and id of the input element that sets the value for the input of this name. */
+        function increase(valueName) {
+            change(valueName, 1);
+        }
         function decrease(valueName) {
-            const input = document.getElementById(valueName);
-            input.value = Number(input.value) - 1 ;
+            change(valueName, -1);
         }
 
     </script>
