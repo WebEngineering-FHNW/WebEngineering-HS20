@@ -5,5 +5,7 @@ class Room {
     int    capacity
 
     static constraints = {
+        description blank: false
+        capacity min: 1
     }
 }
