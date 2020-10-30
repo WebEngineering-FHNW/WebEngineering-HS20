@@ -8,10 +8,14 @@ class BookingController {
         Person koenig = Person.findByLastName("König")
         Room   aula   = Room.findByDescriptionLike("Au%")
         List<Booking> bookings = Booking.findAllByBookerAndDateGreaterThan(koenig, new Date())
-        def result = bookings.
+        def result = bookings.room
 
+        println result
 
-        render text: "" + result
+        List<Booking> bookings1 = Booking.findAllByRoom(aula)
+        def persons_unique = bookings1.booker.unique()
+
+        render text: "" + persons_unique
     }
 
 }
