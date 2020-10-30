@@ -11,6 +11,8 @@ class Booking {     // relation, many-to-many
     public static final String PM2 = "15:15 - 18:00"
     public static final List<String> TIME_SLOTS = [AM, PM1, PM2]
 
+    String toString() { "$booker $room $date $timeslot" }
+
     static constraints = {
         date      nullable: false
         timeslot  nullable: false, inList: TIME_SLOTS
