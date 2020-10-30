@@ -1,6 +1,6 @@
 package webec
 
-class Booking {
+class Booking {     // relation, many-to-many
     Room   room     // many-to-one
     Person booker   // many-to-one
 
