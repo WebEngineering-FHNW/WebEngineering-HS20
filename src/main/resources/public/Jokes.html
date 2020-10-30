@@ -7,13 +7,13 @@
     </title>
     <script>
         function getJokes() {
-            const url = "https://sv443.net/jokeapi/v2/joke/Programming?lang=de";
+            const url = "https://sv443.net/jokeapi/v2/joke/Programming";
             fetch(url)
                 .then( resp => resp.json() )
                 .then( json => {
-                    // console.log(json);
+                    console.log(json);
                     let text = json.joke;
-                    if (json.type === "twopart") {
+                    if ("twopart" === json.type) { // Yoda conditional
                         text = json.setup + " - "+ json.delivery;
                     }
                     document.getElementById("target").textContent = text ;
