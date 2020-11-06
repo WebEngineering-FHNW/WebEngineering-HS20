@@ -1,5 +1,8 @@
 package webec
 
+import grails.rest.Resource
+
+@Resource(uri="/bookings")
 class Booking {     // relation, many-to-many
     Room   room     // many-to-one
     Person booker   // many-to-one

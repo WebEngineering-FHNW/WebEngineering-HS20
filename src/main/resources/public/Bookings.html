@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>
+        Jokes
+    </title>
+    <script>
+        function getBookings() {
+            const url = "/bookings.json";
+            fetch(url)
+                .then( resp => resp.json() )
+                .then( bookings => {
+                    console.log(bookings);
+                    bookings.forEach( booking => {
+                        document.writeln("<div>");
+                        document.writeln("Buchung Nr:" + booking.id);
+                        document.writeln("</div>");
+                    })
+
+                 })
+                .catch( err => console.log(err));
+        }
+    </script>
+</head>
+<body>
+<h1>
+    All my bookings
+</h1>
+
+<div id="target">
+    fetching ...
+</div>
+
+<script>
+    getBookings();
+</script>
+
+</body>
+</html>
