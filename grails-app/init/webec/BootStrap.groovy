@@ -12,21 +12,25 @@ class BootStrap {
 
         // in production or test, this might already be in the DB
         SecRole adminRole = save(SecRole.findOrCreateWhere(authority: SecRole.ADMIN))
+        SecRole guestRole = save(SecRole.findOrCreateWhere(authority: SecRole.GUEST))
 
         if (Environment.current != Environment.DEVELOPMENT) { // guard clause
             return;
         }
 
-        SecUser testUser  = save(new SecUser(username: 'me', password: 'toobad'))
+        SecUser testUser  = save(new SecUser(username: 'me',    password: 'toobad'))
+        SecUser guest     = save(new SecUser(username: 'guest', password: 'guest'))
+
 
         testUser.withTransaction { tx ->
             SecUserSecRole.create(testUser, adminRole, true) //flush
+            SecUserSecRole.create(guest,    guestRole, true)
         }
 
         // plausibility check
-        assert SecRole.count()          == 1
-        assert SecUser.count()          == 1
-        assert SecUserSecRole.count()   == 1
+        assert SecRole.count()          == 2
+        assert SecUser.count()          == 2
+        assert SecUserSecRole.count()   == 2
 
         Person koenig = new Person(firstName: "Dierk",  lastName: "König").save()
         Person holz   = new Person(firstName: "Dieter", lastName: "Holz").save()
