@@ -12,10 +12,9 @@
                 .then( resp => resp.json() )
                 .then( bookings => {
                     console.log(bookings);
+                    const target = document.getElementById("target");
                     bookings.forEach( booking => {
-                        document.writeln("<div>");
-                        document.writeln("Buchung Nr:" + booking.id);
-                        document.writeln("</div>");
+                        target.innerHTML += "<div>"+"Buchung Nr:" + booking.id + "</div>";
                     })
 
                  })
@@ -29,7 +28,6 @@
 </h1>
 
 <div id="target">
-    fetching ...
 </div>
 
 <script>
