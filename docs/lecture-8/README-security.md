@@ -37,7 +37,7 @@ That clashes with some DBMS e.g. Postgres.
 
 ## Steps that have been taken to set up the security
 
-- add dependency to build.gradle: `compile 'org.grails.plugins:spring-security-core:3.2.3'`
+- add dependency to build.gradle: `compile 'org.grails.plugins:spring-security-core:4.0.3'`
 - grailsw compile
 - grailsw s2-quickstart webec SecUser SecRole
 - follow the steps of dk_security (see resources above)
