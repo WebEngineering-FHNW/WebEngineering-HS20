@@ -9,6 +9,7 @@ grails.plugin.springsecurity.logout.postOnly = false // allow logout via get url
 
 
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
+	[pattern: '/static/**',      access: ['permitAll']],
 	[pattern: '/',               access: ['permitAll']],
 	[pattern: '/error',          access: ['permitAll']],
 	[pattern: '/index',          access: ['permitAll']],
@@ -33,6 +34,7 @@ grails.plugin.springsecurity.filterChain.chainMap = [
 // config types are 'Annotation', 'Requestmap', or 'InterceptUrlMap'
  grails.plugin.springsecurity.securityConfigType = 'InterceptUrlMap'
  grails.plugin.springsecurity.interceptUrlMap =  [
+ 	[pattern: '/static/**',   access: ['permitAll']],
  	[pattern: '/',               access: ['permitAll']],
 	[pattern: '/error',          access: ['permitAll']],
 	[pattern: '/index',          access: ['permitAll']],
