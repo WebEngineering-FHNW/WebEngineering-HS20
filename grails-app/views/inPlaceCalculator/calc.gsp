@@ -22,8 +22,9 @@
 <form action="/inPlaceCalculator/calc" method="get">
   <fieldset class="form padded">
 
-    <tmpl:form_row name="en" label="En" model="${calculatorInstance}"/>
-    <tmpl:form_row name="exam" label="Exam" model="${calculatorInstance}"/>
+    <div class="formgrid">
+      <tmpl:form_row name="en" label="En" model="${calculatorInstance}"/>
+      <tmpl:form_row name="exam" label="Exam" model="${calculatorInstance}"/></div>
 
     <div>
       <label>&nbsp;</label>
