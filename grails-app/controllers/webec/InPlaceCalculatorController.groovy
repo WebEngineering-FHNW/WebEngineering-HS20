@@ -19,7 +19,13 @@ class InPlaceCalculatorController {
         if (calcModel.hasErrors()) {
             calcModel.result = "Cannot calculate. Input data was invalid."
         }
-        render view: 'calc', model: [calculatorInstance: calcModel]
+
+        if (request.getHeader("USER-AGENT").contains("Edge")) {
+            render text:"besorg Dir einen besseren Browser !"
+        } else {
+            render view: 'calc', model: [calculatorInstance: calcModel]
+        }
+
     }
 
 }
